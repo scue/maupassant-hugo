@@ -3,7 +3,6 @@
 {{ partial "header" . }}
 
 <div id="body">
-        {{ if .Params.toc -}}
         <!--悬浮目录-->
         <div id="virtual_toc_list" style="display: none">
             {{.TableOfContents}}
@@ -14,7 +13,7 @@
                 <strong id="toc_btn_close" style="color: black;font-size: large;float: right">╳</strong>
             </header>
             <div id="toc_list" style="background-color: #f3f3f3;color: black;padding: 10px;">
-        
+
             </div>
         </div>
         <style type="text/css">
@@ -25,7 +24,7 @@
                 height: auto;
                 font-size: 13px;
             }
-        
+
             #toc_list a:hover,
             #toc_list a:active {
                 color: #ba3925;
@@ -40,7 +39,7 @@
                 let floatTocWidth = (document.body.clientWidth - colGroupElem.offsetWidth) / 2 - 16;
                 var useFloatToc = false;
 
-                if (floatTocWidth >= 100) {
+                if (floatTocWidth >= 180) {
                     useFloatToc = true;
                     document.getElementById("toc_list").appendChild(tocNavElem);
                     floatTocDivElem.style.display = 'block';
@@ -104,10 +103,9 @@
                     fixedTocElem.parentElement.style.display = "";
                 }
                 document.getElementById("virtual_toc_list").remove();
-            };   
+            };
         </script>
-        {{- end }}
-        
+
     <div class="container">
         <div class="col-group">
 
